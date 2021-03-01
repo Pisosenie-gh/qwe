@@ -1,0 +1,258 @@
+{%load static%}
+{% load i18n %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Association</title>
+<link href="{% static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="{% static '123/css/main.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static '123/css/base.css' %}">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--slider-->
+<link href="{% static 'web/css/slider.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<script type="text/javascript" src="{% static 'web/js/jquery-1.9.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'web/js/jquery.nivo.slider.js' %}"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+</head>
+<body>
+<div class="header2">
+  <div class="wrap2">
+	<div class="header-top2">
+		 <div class="logo2">
+			<h1><a href="index.html">ELAB.ASIA</a></h1>
+		 </div>
+		 <div class="menu2">
+			<div class="cssmenu2">
+				<ul class="topmenu2">
+				   <li class="active"><a href="{% url 'index' %}"><span>Главная</span></a></li>
+  </li>
+
+	<li><a href="{% url 'projects' %}" ><span>Мероприятия</span></a></li>
+
+  <div class="hamburger-menu2">
+  <input id="menu__toggle" type="checkbox" />
+  <label class="menu__btn" for="menu__toggle">
+    <span></span>
+  </label>
+  <ul class="menu__box">
+    <li><a class="menu__item" href="index.html">Главная</a></li>
+    <li><a class="menu__item" href="{% url 'projects' %}">Проекты и новости</a></li>
+    <li><a class="menu__item" href="{% url 'about' %}">Руководство</a></li>
+    <li><a class="menu__item" href="{% url 'contact' %}">Контакты</a></li>
+    <li><a class="menu__item" href="{% url 'top' %}">Как вступить?</a></li>
+  </ul>
+	</div>
+				   <li class="has-sub"><a href="{% url 'top' %}"><span>Членство</span></a></li>
+				   <li class="last"><a href="{% url 'contact' %}"><span>Контакты</span></a></li>
+				    <li class="last"><a href="{% url 'about' %}"><span>Руководство</span></a></li>
+				 	<div class="clear"></div>
+				 </ul>
+	          </div>
+		  </div>
+		  <div class="clear"></div>
+	   </div>
+   </div>
+</div>
+      <!------ Slider ------------>
+		  <div class="slider">
+	      	<div class="slider-wrapper theme-default">
+	            <div id="slider" class="nivoSlider">
+	                <img src="{% static 'web/images/banner1.jpg' %}" alt="" />
+	                <img src="{% static 'web/images/banner2.jpg' %}" alt="" />
+	                <img src="{% static 'web/images/banner3.jpg' %}" alt="" />
+	                <img src="{% static 'web/images/banner4.jpg' %}" alt="" />
+	                <img src="{% static 'web/images/banner5.jpg' %}" alt="" />
+	            </div>
+	        </div>
+   		</div>
+
+
+		<!------End Slider ------------>
+	<div class="main">
+		<!--<div class="content-top">
+			<div class="wrap">
+				<div class="section group">
+				<div class="col_1_of_3 span_1_of_3">
+					<div class="thumb-pad2">
+	                    <div class="thumbnail">
+	                        <h4>Lorem ipsum dolor sit</h4>
+	                        <figure><img src="web/images/pic.jpg" alt=""><em class="sp1"></em></figure>
+	                        <div class="caption">
+	                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud</p>
+	                            <a href="#" class="btn-default btn1">Read more</a>
+	                        </div>
+	                    </div>
+                	</div>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					<div class="thumb-pad2">
+	                    <div class="thumbnail">
+	                       <h4>Lorem ipsum dolor sit</h4>
+	                        <figure><img src="web/images/pic1.jpg" alt=""><em class="sp1"></em></figure>
+	                        <div class="caption">
+	                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud</p>
+	                            <a href="#" class="btn-default btn1">Read more</a>
+	                        </div>
+	                    </div>
+	                </div>
+				</div>
+				<div class="col_1_of_3 span_1_of_3">
+					<div class="thumb-pad2">
+	                    <div class="thumbnail">
+	                      <h4>Lorem ipsum dolor sit</h4>
+	                        <figure><img src="web/images/pic2.jpg" alt=""><em class="sp1"></em></figure>
+	                        <div class="caption">
+	                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud</p>
+	                            <a href="#" class="btn-default btn1">Read more</a>
+	                        </div>
+	                    </div>
+                    </div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			</div>
+		</div>-->
+		    <!-- features Section
+   ================================================== -->
+	<section id="features">
+
+		<div class="row section-intro">
+   		<div class="col-twelve with-bottom-line">
+
+   			<h5>Features</h5>
+   			<h1>Great features you'll love.</h1>
+
+   			<p class="lead">Lorem ipsum Do commodo in proident enim in dolor cupidatat adipisicing dolore officia nisi aliqua incididunt Ut veniam lorem ipsum Consectetur ut in in eu do.</p>
+
+   		</div>
+   	</div>
+
+   	<div class="row features-content">
+
+   		<div class="features-list block-1-3 block-s-1-2 block-tab-full group">
+
+	      	<div class="bgrid feature">
+
+	      		<span class="icon"><i class="icon-window"></i></span>
+
+	            <div class="service-content">
+
+	            	 <h3 class="h05">Fully Resposive</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         		</p>
+
+	         	</div>
+
+				</div> <!-- /bgrid -->
+
+				<div class="bgrid feature">
+
+					<span class="icon"><i class="icon-eye"></i></span>
+
+	            <div class="service-content">
+	            	<h3 class="h05">Retina Ready</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         		</p>
+
+
+	            </div>
+
+			   </div> <!-- /bgrid -->
+
+			   <div class="bgrid feature">
+
+			   	<span class="icon"><i class="icon-paint-brush"></i></span>
+
+	            <div class="service-content">
+	            	<h3 class="h05">Stylish Design</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	        			</p>
+
+
+	            </div>
+
+			   </div> <!-- /bgrid -->
+
+				<div class="bgrid feature">
+
+					<span class="icon"><i class="icon-file"></i></span>
+
+	            <div class="service-content">
+	            	<h3 class="h05">Clean Code</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	         		</p>
+
+
+	            </div>
+
+				</div> <!-- /bgrid -->
+
+			   <div class="bgrid feature">
+
+			   	<span class="icon"><i class="icon-layers"></i></span>
+
+	            <div class="service-content">
+	            	<h3 class="h05">Easy To Customize</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	        			</p>
+
+
+	            </div>
+
+			   </div> <!-- /bgrid -->
+
+			   <div class="bgrid feature">
+
+			   	<span class="icon"><i class="icon-gift"></i></span>
+
+	            <div class="service-content">
+	            	 <h3 class="h05">Free of Charge</h3>
+
+		            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+	        			</p>
+
+	            </div>
+
+			   </div> <!-- /bgrid -->
+
+	      </div> <!-- features-list -->
+
+   	</div> <!-- features-content -->
+
+	</section> <!-- /features -->
+		<div class="content-bottom">
+			<div class="map">
+				<iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d726.738838094732!2d76.83165200554562!3d43.231395735707515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369dbda10e0c7%3A0x8b08290f8c09fd26!2z0JbQmiAi0KPRiCDQodGD0L3QutCw0YAi!5e0!3m2!1sru!2skz!4v1606472795988!5m2!1sru!2skz"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px"></a></small>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="wrap">
+		<div class="footer-top">
+				<!-- НАШИ КОНТАКТЫ -->
+				<div class="col_1_of_4 span_1_of_4 footer-lastgrid">
+					<h3>НАШИ КОНТАКТЫ</h3>
+					<ul class="last">
+							<li><span>+7 (701) 822 73 03 - Нурпеисов Алиакбар</span></li>
+							<li><span>+7 (702) 977 43 92 - Жумабаева Назерке</span></li>
+						</ul>
+			    </div>
+				<div class="clear"></div>
+		</div>
+		<div class="copy">
+					<p>Design by <a href="https://elab.asia/" target="_blank">Elab.Asia</a></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

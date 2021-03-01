@@ -1,0 +1,178 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Association</title>
+<link href="{% static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<div class="header">
+  <div class="wrap">
+	<div class="header-top">
+		 <div class="logo">
+			<h1><a href="index.html">RACHOO</a></h1>
+		 </div>
+		 <div class="menu">
+			<div class="cssmenu">
+				<ul class="topmenu">
+          <li class="active"><a href="{% url 'index' %}"><span>Главная</span></a></li>
+  </li>
+
+ <li><a href="{% url 'projects' %}" ><span>Мероприятия</span></a></li>
+
+  <div class="hamburger-menu">
+  <input id="menu__toggle" type="checkbox" />
+  <label class="menu__btn" for="menu__toggle">
+    <span></span>
+  </label>
+  <ul class="menu__box">
+    <li><a class="menu__item" href="index.html">Главная</a></li>
+    <li><a class="menu__item" href="{% url 'projects' %}">Проекты и новости</a></li>
+    <li><a class="menu__item" href="{% url 'about' %}">Руководство</a></li>
+    <li><a class="menu__item" href="{% url 'contact' %}">Контакты</a></li>
+    <li><a class="menu__item" href="{% url 'top' %}">Как вступить?</a></li>
+  </ul>
+  </div>
+           <li class="has-sub"><a href="{% url 'top' %}"><span>Членство</span></a></li>
+           <li class="last"><a href="{% url 'contact' %}"><span>Контакты</span></a></li>
+            <li class="last"><a href="{% url 'about' %}"><span>Руководство</span></a></li>
+				 	<div class="clear"></div>
+				 </ul>
+	          </div>
+		  </div>
+		  <div class="clear"></div>
+	   </div>
+   </div>
+</div>
+     <div class="main">
+		  <div class="wrap">
+		  	<div class="about-top">
+				<div class="about">
+					<!-- <div class="map">
+					   	<iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d726.738838094732!2d76.83165200554562!3d43.231395735707515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369dbda10e0c7%3A0x8b08290f8c09fd26!2z0JbQmiAi0KPRiCDQodGD0L3QutCw0YAi!5e0!3m2!1sru!2skz!4v1606472795988!5m2!1sru!2skz"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
+					</div>	 -->
+				<div class="info3">
+					<h2>Как вступить в Ассоциацию</h2>
+				<p>Уважаемые руководители негосударственных организаций образования!<br>
+
+                	Приглашаем Вас стать членом Республиканской Ассоциации частных организаций образования (РАЧОО).
+                </p>
+                <p>
+                	По вопросам вступления в РАЧОО<br>
+
+                	Обращаться в отдел вступления, по тел: 8 (727) 292 03 43, 8 (727) 222 10 16.<br>
+
+                	E-mail: gugudje@mail.ru, nazerke.zhumabay@gmail.com.<br>
+                </p>
+                <p>
+                	  Ассоциация объединяет лучшие педагогические умы для творчества, поиска новых путей в раскрытии потенциала воспитанников, учеников и студентов. Деятельность Ассоциации позволяет педагогам негосударственных организаций образования реализовывать новые инициативы, проекты. Членство в Ассоциации дает возможность частным детским садам, школам, колледжам, вузам обмениваться информацией, опытом, методическими наработками, повысить свою квалификацию.
+
+                </p>
+
+                <p>
+                	Цель Ассоциации – всестороннее содействие развитию частного образования на территории всей страны, повышение его конкурентоспособности.<br>
+                	Задачи Ассоциации - внедрение качественного обучения в частный сектор образования, расширение перспектив международного взаимовыгодного сотрудничества в образовательной сфере, развитие государственно-частного партнерства в образовательной сфере Республики Казахстан.
+
+                </p>
+                <p> Став членом нашей Ассоциации, Вы можете получать:<br>
+• оперативную консультацию по вопросам законодательства;<br>
+• помощь юридического отдела;<br>
+• консультации бухгалтера;<br>
+• информационную поддержку любых мероприятий и проектов.<br>
+ </p>
+
+
+                <p></p>
+
+                </div>
+
+				<div class="contact">
+					<div class="col1 span_2_of_contact">
+					  <div class="contact-form">
+              <h3>Заявление</h3>
+      						    <form method="post" action="{% url 'topback_view' %}" enctype="multipart/form-data">
+      						        {% csrf_token %}
+      						    	<div>
+      							    	<span><label>ФИО руководителя организации</label></span>
+      							    	<span><input name="name" type="text" class="textbox"></span>
+      							    </div>
+      							    <div>
+      							    	<span><label>Название компании</label></span>
+      							    	<span><input name="description" type="text" class="textbox"></span>
+      							    </div>
+      							    <div>
+      							    	<span><label>E-Mail</label></span>
+      							    	<span><input name="email" type="text" class="textbox"></span>
+      							    </div>
+      							    <div>
+      							    	<span><label>Номер телефона</label></span>
+      							    	<span><input name="phone" type="Tel"> </input></span>
+      							    </div>
+      							    <div>
+      							    	<span><label>Заявление</label></span>
+      							    	<button class="req"><a href="{% static 'sss.xlsx' %}" download="" class="reqq">Скачать форму заявки</a></button>
+      							    	<span><input name="document" type="file" ></span>
+      							    </div>
+      {#							    <div>#}
+      {#							    	<span><label>Резюме</label></span>#}
+      {#							    	<button class="req"><a href="{% static 'sss.xlsx' %}" download="" class="reqq">Скачать форму резюме</a></button>#}
+      {#							    	<span><input name="userFile" type="file" class="textbox"></span>#}
+      {#							    </div>#}
+      							   <div>
+      							   		<input href="#" type="submit" value="Отправить" class="btn">
+      							  </div>
+      						    </form>
+						</div>
+	  				</div>
+  				<div class="clear"></div>
+			  </div>
+			</div>
+		</div>
+	  </div>
+	</div>
+	<div class="footer">
+		<div class="wrap">
+		<div class="footer-top">
+				<!-- <div class="col_1_of_4 span_1_of_4">
+					<h3>INFORMATION</h3>
+					<ul class="first">
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms and conditions</a></li>
+						<li><a href="#">Legal Notice</a></li>
+					</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h3>CATEGORIES</h3>
+					<ul class="first">
+						<li><a href="#">New products</a></li>
+						<li><a href="#">top sellers</a></li>
+						<li><a href="#">Specials</a></li>
+					</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h3>My ACCOUNT</h3>
+					<ul class="first">
+						<li><a href="#">Your Account</a></li>
+						<li><a href="#">Personal info</a></li>
+						<li><a href="#">Prices</a></li>
+				    </ul>
+				</div> -->
+				<div class="col_1_of_4 span_1_of_4 footer-lastgrid">
+					<h3>НАШИ КОНТАКТЫ</h3>
+					<ul class="last">
+						<li><span>+7 (701) 822 73 03 - Нурпеисов Алиакбар</span></li>
+							<li><span>+7 (702) 977 43 92 - Жумабаева Назерке</span></li>
+						</ul>
+			    </div>
+				<div class="clear"></div>
+		</div>
+		<div class="copy">
+					<p>Design by <a href="https://elab.asia/" target="_blank">Elab.Asia</a></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

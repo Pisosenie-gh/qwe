@@ -1,0 +1,176 @@
+{% load static %}
+{% load hitcount_tags %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Association</title>
+<link href="{% static 'web/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="{% static 'web/js/jquery-1.9.0.min.js' %}"></script>
+<link rel="stylesheet" href="{% static 'web/css/swipebox.css' %}">
+<script src="{% static 'web/js/ios-orientationchange-fix.js' %}"></script>
+<script src="{% static 'css/style.css' %}"></script>
+<script type="text/javascript">
+		jQuery(function($) {
+			$(".swipebox").swipebox();
+		});
+	</script>
+</head>
+<body>
+<div class="header">
+  <div class="wrap">
+	<div class="header-top">
+		 <div class="logo">
+			<h1><a href="index.html">RACHOO</a></h1>
+		 </div>
+		 <div class="menu">
+			<div class="cssmenu">
+				<ul class="topmenu">
+					<li class="active"><a href="{% url 'index' %}"><span>Главная</span></a></li>
+ </li>
+
+ <li><a href="{% url 'projects' %}" ><span>Мероприятия</span></a></li>
+
+  <div class="hamburger-menu">
+  <input id="menu__toggle" type="checkbox" />
+  <label class="menu__btn" for="menu__toggle">
+    <span></span>
+  </label>
+  <ul class="menu__box">
+		<li><a class="menu__item" href="index.html">Главная</a></li>
+		<li><a class="menu__item" href="{% url 'projects' %}">Проекты и новости</a></li>
+		<li><a class="menu__item" href="{% url 'about' %}">Руководство</a></li>
+		<li><a class="menu__item" href="{% url 'contact' %}">Контакты</a></li>
+		<li><a class="menu__item" href="{% url 'top' %}">Как вступить?</a></li>
+		</ul>
+		</div>
+					 <li class="has-sub"><a href="{% url 'top' %}"><span>Членство</span></a></li>
+					 <li class="last"><a href="{% url 'contact' %}"><span>Контакты</span></a></li>
+						<li class="last"><a href="{% url 'about' %}"><span>Руководство</span></a></li>
+				 	<div class="clear"></div>
+				 </ul>
+	          </div>
+		  </div>
+		  <div class="clear"></div>
+	   </div>
+   </div>
+</div>
+     <div class="main">
+		<div class="wrap">
+			<div class="about-top">
+				<div class="about">
+					<div class="heading4">
+				 	<h2>Новости</h2>
+				</div>
+				<div class="section group">
+					{% block content %}
+							{% for i in list_articles %}
+					<div class="grid_1_of_4 images_1_of_4">
+						 <img src="{{i.image.url }}" alt="">
+						<h4>{{i.name}}</h4>
+						<hr>
+						<p>{{i.text|truncatechars:"90"}}</p>
+						<a href="/news/detail/{{ i.id }}" class="link">Read More</a>
+						<p class="projects-date">Дата публикации: {{ i.date}}</p>
+
+					</div>
+					{% endfor %}
+
+					{% endblock %}
+
+					<!-- <div class="grid_1_of_4 images_1_of_4">
+						<a href="web/images/t-pic6.jpg" class="swipebox" title="Image Title"> <img src="web/images/pic6.jpg" alt=""><span class="zoom-icon"></span> </a>
+						<h4>Aenean nonummy hendrerit</h4>
+						<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient.</p>
+						<a href="#" class="link">Read More</a>
+					</div> -->
+					<!-- <div class="grid_1_of_4 images_1_of_4">
+						<a href="web/images/t-pic7.jpg" class="swipebox" title="Image Title"> <img src="web/images/pic7.jpg" alt=""><span class="zoom-icon"></span> </a>
+						<h4>Aenean nonummy hendrerit</h4>
+						<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient.</p>
+						<a href="#" class="link">Read More</a>
+					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="web/images/t-pic8.jpg" class="swipebox" title="Image Title"> <img src="web/images/pic8.jpg" alt=""><span class="zoom-icon"></span> </a>
+						<h4>Aenean nonummy hendrerit</h4>
+						<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient.</p>
+						<a href="#" class="link">Read More</a>
+					</div>
+					<div class="clear"></div>
+		   		</div>
+		   		<div class="section group">
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="web/images/t-pic9.jpg" class="swipebox" title="Image Title"> <img src="web/images/pic9.jpg" alt=""><span class="zoom-icon"></span> </a>
+						<h4>Aenean nonummy hendrerit</h4>
+						<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient.</p>
+						<a href="#" class="link">Read More</a>
+					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="web/images/t-pic11.jpg" class="swipebox" title="Image Title"> <img src="web/images/pic11.jpg" alt=""><span class="zoom-icon"></span> </a>
+						<h4>Aenean nonummy hendrerit</h4>
+						<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient.</p>
+						<a href="#" class="link">Read More</a>
+					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="web/images/t-pic10.jpg" class="swipebox" title="Image Title"> <img src="web/images/pic10.jpg" alt=""><span class="zoom-icon"></span> </a>
+						<h4>Aenean nonummy hendrerit</h4>
+						<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient.</p>
+						<a href="#" class="link">Read More</a>
+					</div>
+					<div class="grid_1_of_4 images_1_of_4">
+						<a href="web/images/t-pic12.jpg" class="swipebox" title="Image Title"> <img src="web/images/pic12.jpg" alt=""><span class="zoom-icon"></span> </a>
+						<h4>Aenean nonummy hendrerit</h4>
+						<p>Praesent vestibulum molestie lacus. Aenean nonummy hendrerit mauris. Phasellus porta. Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis parturient.</p>
+						<a href="#" class="link">Read More</a -->
+					</div>
+					<div class="clear"></div>
+		   		</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="footer">
+		<div class="wrap">
+		<div class="footer-top">
+				<!-- <div class="col_1_of_4 span_1_of_4">
+					<h3>INFORMATION</h3>
+					<ul class="first">
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">Terms and conditions</a></li>
+						<li><a href="#">Legal Notice</a></li>
+					</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h3>CATEGORIES</h3>
+					<ul class="first">
+						<li><a href="#">New products</a></li>
+						<li><a href="#">top sellers</a></li>
+						<li><a href="#">Specials</a></li>
+					</ul>
+				</div>
+				<div class="col_1_of_4 span_1_of_4">
+					<h3>My ACCOUNT</h3>
+					<ul class="first">
+						<li><a href="#">Your Account</a></li>
+						<li><a href="#">Personal info</a></li>
+						<li><a href="#">Prices</a></li>
+				    </ul>
+				</div> -->
+				<div class="col_1_of_4 span_1_of_4 footer-lastgrid">
+					<h3>НАШИ КОНТАКТЫ</h3>
+					<ul class="last">
+							<li><span>+7 (701) 822 73 03 - Нурпеисов Алиакбар</span></li>
+							<li><span>+7 (702) 977 43 92 - Жумабаева Назерке</span></li>
+						</ul>
+			    </div>
+				<div class="clear"></div>
+		</div>
+		<div class="copy">
+				<p>Design by <a href="https://elab.asia/" target="_blank">Elab.Asia</a></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
